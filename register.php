@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inputan | Login</title>
+    <title>SiBaBe - Daftar</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
@@ -27,18 +31,22 @@
     >
       <!-- <img src="assets/img/hero-bg.jpg" alt="" /> -->
       <h1 class="mb-3" style="font-weight: 700">Daftar</h1>
-      <p class="text-muted mb-3">Silahkan masukan email dan password.</p>
-      <form action="#" method="post">
-        <input class="mb-3" type="text" name="username" placeholder="Email" />
+      <p class="text-muted mb-3">Silahkan isi data di bawah ini.</p>
+      <form action="register-action.php" method="post">
+        <input class="mb-3" type="text" name="nama" placeholder="Nama" required/>
+        <input class="mb-3" type="number" name="nohp" placeholder="No HP" required/>
+        <input class="mb-3" type="text" name="email" placeholder="Email" required/>
         <input
           class="mb-3"
           type="password"
           name="password"
           placeholder="Password"
+          required
         />
         <input class="mb-3 submitbutton" type="submit" value="Daftar" />
       </form>
-      <p>Sudah memiliki akun? Silahkan <a href="#">masuk disini.</a></p>
+      <p>Sudah memiliki akun? Silahkan <a href="login.php" style="font-weight: 700;">klik disini.</a></p>
+      <a class="bi bi-arrow-left backBtn" href="index.php"> Kembali</a>
     </div>
   </body>
 </html>
