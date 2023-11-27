@@ -41,27 +41,22 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-      <div
-        class="container-fluid d-flex align-items-center justify-content-between"
-      >
-        <a
-          href="index.php"
-          class="logo d-flex align-items-center me-auto me-xl-0"
-        >
-          <img src="assets/img/sibabelogo.png" alt="" />
-          <h1>SiBaBe</h1>
-          <!-- <span>.</span> -->
-        </a>
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/sibabelogo.png" alt="" />
+        <h1>SiBaBe</h1>
+        <!-- <span>.</span> -->
+      </a>
 
-        <!-- Nav Menu -->
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <!-- <li><a href="index.php#hero" class="active">Beranda</a></li> -->
-            <li><a href="index.php#portfolio">Lihat BaBe</a></li>
-            <li><a href="index.php#testimonials">Testimoni</a></li>
-            <li><a href="index.php#about">Tentang Kami</a></li>
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- <li><a href="index.php#hero" class="active">Beranda</a></li> -->
+          <li><a href="index.php#portfolio">Lihat BaBe</a></li>
+          <li><a href="index.php#testimonials">Testimoni</a></li>
+          <li><a href="index.php#about">Tentang Kami</a></li>
 
-            <!-- <li class="dropdown has-dropdown">
+          <!-- <li class="dropdown has-dropdown">
               <a href="#"
                 ><span>Dropdown</span> <i class="bi bi-chevron-down"></i
               ></a>
@@ -85,37 +80,35 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li> -->
-            <!-- <li><a href="index.php#contact">Contact</a></li> -->
+          <!-- <li><a href="index.php#contact">Contact</a></li> -->
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <!-- End Nav Menu -->
+
+      <?php
+      if (isset($_SESSION['email'])) {
+      ?>
+        <li class="dropdown has-dropdown">
+          <a href="#"><span>Hai, <?php echo "$_SESSION[email]"; ?> <i class="bi bi-chevron-down"></i></span> </a>
+          <ul class="dd-box-shadow">
+            <li><a href="#">Profil</a></li>
+            <li><a href="logout.php">Keluar</a></li>
           </ul>
+        </li>
+      <?php
+      } else {
+      ?>
+        <a class="btn-getstarted" href="login.php">Masuk</a>
+      <?php
+      }
+      ?>
 
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-        <!-- End Nav Menu -->
-
-        <?php
-            if (isset($_SESSION['email'])) {
-            ?>
-            <li class="dropdown has-dropdown">
-              <a href="#"
-                ><span>Hai, <?php echo "$_SESSION[email]";?> <i class="bi bi-chevron-down"></i
-              ></span> </a>
-              <ul class="dd-box-shadow">
-                <li><a href="#">Profil</a></li>
-                <li><a href="logout.php">Keluar</a></li>
-              </ul>
-            </li>
-            <?php
-            } else {
-            ?>
-                <a class="btn-getstarted" href="login.php">Masuk</a>
-            <?php
-            }
-        ?>
-
-        <!-- <a class="btn-getstarted" href="login.php">Masuk</a> -->
-      </div>
-    </header>
-    <!-- End Header -->
+      <!-- <a class="btn-getstarted" href="login.php">Masuk</a> -->
+    </div>
+  </header>
+  <!-- End Header -->
 
   <main id="main" style="margin-top: 24px;">
 
@@ -219,8 +212,8 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-      <div class="container footer-top">
-        <!-- <div class="row gy-4">
+    <div class="container footer-top">
+      <!-- <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
             <a href="index.php" class="logo d-flex align-items-center">
               <span>Append</span>
@@ -273,23 +266,23 @@
             <p><strong>Email:</strong> <span>info@example.com</span></p>
           </div>
         </div> -->
-      </div>
+    </div>
 
-      <div class="container copyright text-center mt-4">
-        <p>
-          &copy; <span>Copyright</span> <strong class="px-1">SiBaBe</strong>
-          <span>All Rights Reserved</span>
-        </p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+    <div class="container copyright text-center mt-4">
+      <p>
+        &copy; <span>Copyright</span> <strong class="px-1">SiBaBe</strong>
+        <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
-    </footer>
-    <!-- End Footer -->
+    </div>
+  </footer>
+  <!-- End Footer -->
 
   <!-- Scroll Top Button -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

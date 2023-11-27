@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Validate user credentials
-    $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
+    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = mysqli_query($koneksi, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Login failed
-        echo "Invalid email or password";
+        echo "Email atau password yang kamu masukan salah.";
     }
 }
-?>

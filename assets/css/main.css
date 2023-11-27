@@ -389,6 +389,10 @@ section {
   .navmenu .dd-box-shadow {
     box-shadow: 0px 0px 30px rgba(var(--default-color-rgb), 0.15);
   }
+
+  .user-nav-mobile {
+    display: none;
+  }
 }
 
 /* Mobile Navigation */
@@ -492,6 +496,12 @@ section {
 
   .mobile-nav-active .navmenu > ul {
     display: block;
+  }
+  .user-nav-mobile {
+    display: block;
+  }
+  .user-nav-desktop {
+    display: none;
   }
 }
 
