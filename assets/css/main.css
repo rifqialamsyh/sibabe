@@ -304,6 +304,7 @@ section {
 
   .navmenu a i,
   .navmenu a:focus i {
+    padding: 12px;
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -318,6 +319,10 @@ section {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+  }
+
+  .dropdown-session-btn {
+    background-color: red;
   }
 
   .dropdown {

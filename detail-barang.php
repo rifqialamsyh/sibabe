@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,72 +45,8 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/sibabelogo.png" alt="" />
-        <h1>SiBaBe</h1>
-        <!-- <span>.</span> -->
-      </a>
-
-      <!-- Nav Menu -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <!-- <li><a href="index.php#hero" class="active">Beranda</a></li> -->
-          <li><a href="index.php#portfolio">Lihat BaBe</a></li>
-          <li><a href="index.php#testimonials">Testimoni</a></li>
-          <li><a href="index.php#about">Tentang Kami</a></li>
-
-          <!-- <li class="dropdown has-dropdown">
-              <a href="#"
-                ><span>Dropdown</span> <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul class="dd-box-shadow">
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown has-dropdown">
-                  <a href="#"
-                    ><span>Deep Dropdown</span>
-                    <i class="bi bi-chevron-down"></i
-                  ></a>
-                  <ul class="dd-box-shadow">
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li> -->
-          <!-- <li><a href="index.php#contact">Contact</a></li> -->
-        </ul>
-
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-      <!-- End Nav Menu -->
-
-      <?php
-      if (isset($_SESSION['email'])) {
-      ?>
-        <li class="dropdown has-dropdown">
-          <a href="#"><span>Hai, <?php echo "$_SESSION[email]"; ?> <i class="bi bi-chevron-down"></i></span> </a>
-          <ul class="dd-box-shadow">
-            <li><a href="#">Profil</a></li>
-            <li><a href="logout.php">Keluar</a></li>
-          </ul>
-        </li>
-      <?php
-      } else {
-      ?>
-        <a class="btn-getstarted" href="login.php">Masuk</a>
-      <?php
-      }
-      ?>
-
-      <!-- <a class="btn-getstarted" href="login.php">Masuk</a> -->
-    </div>
+    <?php include "navbar.php";
+    ?>
   </header>
   <!-- End Header -->
 
@@ -137,10 +77,28 @@
     <!-- Portfolio-details Section - Portfolio Details Page -->
     <section id="portfolio-details" class="portfolio-details">
 
+      <?php
+      $item_id = $_GET['item_id'];
+
+      $query = "SELECT * FROM barang WHERE item_id = $item_id";
+      $result = mysqli_query($koneksi, $query);
+
+      // Check if the query was successful
+      if ($result && mysqli_num_rows($result) > 0) {
+        $barang = mysqli_fetch_assoc($result);
+
+        $nama = $barang['nama'];
+        $deskripsi = $barang['deskripsi'];
+        $status = $barang['status'];
+        $foto = $barang['foto'];
+        $user_id = $barang['user_id'];
+      }
+      ?>
+
       <div class="container" data-aos="fade-up">
 
         <div class="portfolio-details-slider swiper">
-          <template class="swiper-config">
+          <!-- <template class="swiper-config">
             {
             "loop": true,
             "speed" : 600,
@@ -153,40 +111,24 @@
             "prevEl": ".swiper-button-prev"
             }
             }
-          </template>
+          </template> -->
           <div class="swiper-wrapper align-items-center">
 
             <div class="swiper-slide">
-              <img src="assets/img/portfolio/app-1.jpg" alt="">
+              <img src="assets/img/babe/<?php echo $foto; ?>" alt="">
             </div>
-
-            <!-- <div class="swiper-slide">
-              <img src="assets/img/portfolio/product-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/branding-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/books-1.jpg" alt="">
-            </div> -->
-
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
         </div>
 
         <div class="row justify-content-between gy-4 mt-4">
 
           <div class="col-lg-8" data-aos="fade-up">
             <div class="portfolio-description">
-              <h2>Meja Desktop</h2>
+              <h2><?php echo $nama; ?></h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
+                <?php echo $deskripsi; ?>
               </p>
             </div>
           </div>
@@ -195,9 +137,14 @@
             <div class="portfolio-info">
               <h3>Informasi</h3>
               <ul>
-                <li><strong>Nama Pemilik</strong> Rifqi</li>
-                <li><strong>Status</strong> Belum diberikan</li>
-                <li><a href="#" class="btn-visit align-self-start">Hubungi</a></li>
+                <?php
+                $query_user = "SELECT * FROM users WHERE id = $user_id";
+                $result_user = mysqli_query($koneksi, $query_user);
+                $user = mysqli_fetch_assoc($result_user);
+                ?>
+                <li><strong>Nama Pemilik</strong> <?php echo $user['nama']; ?></li>
+                <li><strong>Status</strong> <?php echo $status; ?></li>
+                <li><a href="http://wa.me/+62<?php echo $user['nohp']; ?>" class="btn-visit align-self-start">Hubungi</a></li>
               </ul>
             </div>
           </div>
@@ -205,7 +152,6 @@
         </div>
 
       </div>
-
     </section><!-- End Portfolio-details Section -->
 
   </main>

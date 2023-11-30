@@ -23,7 +23,7 @@ session_start();
         if (isset($_SESSION['email'])) {
         ?>
           <li class="user-nav-mobile"><a href="index.php#about">Dasbor</a></li>
-          <li class="user-nav-mobile"><a href="index.php#about">Keluar</a></li>
+          <li class="user-nav-mobile "><a href="index.php#about">Keluar</a></li>
         <?php
         } ?>
 

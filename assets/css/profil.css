@@ -42,7 +42,7 @@ body {
   border-radius: 4px;
   width: 300px;
   height: 450px;
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 .profil h2 {
@@ -57,7 +57,8 @@ body {
   border-radius: 50%;
 }
 
-.addbabe form {
+.addbabe form,
+.addtestimoni form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,12 +69,18 @@ body {
   height: 450px;
 }
 
-.addbabe form label {
+.addbabe form label,
+.addtestimoni form label {
   margin-top: 12px;
 }
 
-.addbabe form textarea {
+.addbabe form textarea,
+.addtestimoni form textarea {
   height: 120px;
+}
+
+.addtestimoni {
+  margin-left: 2rem;
 }
 
 .add-button {
@@ -91,6 +98,36 @@ body {
 .home-btn:hover {
   color: var(--contrast-color);
   background: #5d6265;
+}
+
+.btn-edit {
+  color: var(--contrast-color);
+  background: #667079;
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  color: var(--contrast-color);
+  background: #7a858f;
+}
+
+.btn-delete {
+  color: var(--contrast-color);
+  background: #9a3b3b;
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  color: var(--contrast-color);
+  background: #b14747;
 }
 
 .home-btn {

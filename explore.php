@@ -1,3 +1,6 @@
+<?php
+include 'koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,102 +44,29 @@
     </div>
 
     <div class="pro-container">
-      <div class="pro">
-        <img src="assets/img/features-light-1.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Dijual -</span>
-            <h5>
-        </div>
-        <div class="d-grid gap-2 col-6 m-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
+      <?php
+      // Fetch all barang from the database
+      $query = "SELECT * FROM barang";
+      $result = mysqli_query($koneksi, $query);
 
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Disewakan -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Disewakan -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Dijual -</span> </h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-
-      <!-- Ganti lengkapi photo product -->
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Disewakan -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Gratis -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Dijual -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
-
-      <div class="pro">
-        <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" alt="">
-        <div class="des">
-          <h5>Barang Bekas</h5>
-          <h5><span>- Disewakan -</span></h5>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn-getstarted">Detail</button>
-        </div>
-        <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
-      </div>
+      if (mysqli_num_rows($result) > 0) {
+        foreach ($result as $row) {
+      ?>
+          <div class="pro">
+            <img src="assets/img/babe/<?php echo $row['foto']; ?>" alt="foto barang">
+            <div class="des">
+              <h5><?php echo $row['nama']; ?></h5>
+              <h5><span>- <?php echo $row['status']; ?> -</span>
+                <h5>
+            </div>
+            <div class="d-grid gap-2 col-6 m-auto">
+              <a href="" class="btn-getstarted">Detail</a>
+            </div>
+          </div>
+      <?php
+        }
+      }
+      ?>
     </div>
   </section>
   <!-- FOOTER -->

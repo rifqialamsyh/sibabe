@@ -1,3 +1,6 @@
+<?php
+include 'koneksi.php';
+?>
 <!DOCTYPE php>
 <php lang="en">
 
@@ -86,103 +89,28 @@
             <!-- End Portfolio Filters -->
 
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
+              <?php
+              // Fetch all barang from the database
+              $query = "SELECT * FROM barang";
+              $result = mysqli_query($koneksi, $query);
+
+              if (mysqli_num_rows($result) > 0) {
+                foreach ($result as $row) {
+              ?>
+                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                    <img src="assets/img/babe/<?php echo $row['foto']; ?>" class="img-fluid" alt="" />
+                    <div class="portfolio-info">
+                      <h4><?php echo $row['nama']; ?></h4>
+                      <!-- <p><?php echo $row['description']; ?></p> -->
+                      <a href="assets/img/babe/<?php echo $row['foto']; ?>" title="<?php echo $row['nama']; ?>" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="detail-barang.php?item_id=<?php echo $row['item_id']; ?>" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+              <?php
+                }
+              }
+              ?>
               <!-- End babe Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="detail-barang.php" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
               <!-- End Portfolio Item -->
             </div>
             <!-- End Portfolio Container -->
@@ -211,89 +139,46 @@
                   ".swiper-pagination", "type": "bullets", "clickable": true } }
                 </template>
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="d-flex">
-                        <!-- <img
-                          src="assets/img/testimonials/testimonials-1.jpg"
-                          class="testimonial-img flex-shrink-0"
-                          alt=""
-                        /> -->
-                        <div>
-                          <h3>Saul Goodman</h3>
-                          <!-- <h4>Ceo & Founder</h4> -->
-                          <div class="stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <?php
+                  // Fetch all barang from the database
+                  $query = "SELECT * FROM testimoni";
+                  $testimoniresult = mysqli_query($koneksi, $query);
+
+                  if (mysqli_num_rows($testimoniresult) > 0) {
+                    foreach ($testimoniresult as $rowtestimoni) {
+                  ?>
+                      <div class="swiper-slide">
+                        <div class="testimonial-item">
+                          <div class="d-flex">
+                            <div>
+                              <h3><?php echo $rowtestimoni['nama']; ?></h3>
+                              <!-- <h4>Ceo & Founder</h4> -->
+                              <div class="stars">
+                                <?php
+                                $starCount = $rowtestimoni['bintang']; // Set the number of stars here
+
+                                for ($i = 0; $i < $starCount; $i++) {
+                                  echo '<i class="bi bi-star-fill"></i>';
+                                }
+                                ?>
+                              </div>
+                            </div>
                           </div>
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span><?php echo $rowtestimoni['komentar']; ?></span>
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
                         </div>
                       </div>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim
-                          donec porttitora entum suscipit rhoncus. Accusantium
-                          quam, ultricies eget id, aliquam eget nibh et. Maecen
-                          aliquam, risus at semper.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
+                  <?php
+                    }
+                  }
+                  ?>
+
                   <!-- End testimonial item -->
 
-                  <div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="d-flex">
-                        <!-- <img
-                          src="assets/img/testimonials/testimonials-2.jpg"
-                          class="testimonial-img flex-shrink-0"
-                          alt=""
-                        /> -->
-                        <div>
-                          <h3>Sara Wilsson</h3>
-                          <!-- <h4>Designer</h4> -->
-                          <div class="stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure
-                          esse labore quem cillum quid cillum eram malis quorum
-                          velit fore eram velit sunt aliqua noster fugiat irure
-                          amet legam anim culpa.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
-                  <!-- End testimonial item -->
 
-                  <div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="d-flex">
-                        <!-- <img
-                          src="assets/img/testimonials/testimonials-3.jpg"
-                          class="testimonial-img flex-shrink-0"
-                          alt=""
-                        /> -->
-                        <div>
-                          <h3>Jena Karlis</h3>
-                          <!-- <h4>Store Owner</h4> -->
-                          <div class="stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna
-                          enim sint quorum nulla quem veniam duis minim tempor
-                          labore quem eram duis noster aute amet eram fore quis
-                          sint minim.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
-                  <!-- End testimonial item -->
 
                   <!-- End testimonial item -->
                 </div>
