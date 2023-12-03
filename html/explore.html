@@ -8,6 +8,7 @@
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -32,11 +33,184 @@
     />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/explore.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Navbar -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <img src="assets/img/sibabelogo.png" alt="" />
+          <h1>SiBaBe</h1>
+          <!-- <span>.</span> -->
+        </a>
+
+        <!-- Nav Menu -->
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero" class="active">Beranda</a></li>
+            <li><a href="index.html#portfolio">Lihat BaBe</a></li>
+            <li><a href="index.html#testimonials">Testimoni</a></li>
+            <li><a href="index.html#about">Tentang Kami</a></li>
+
+            <!-- <li class="dropdown has-dropdown">
+              <a href="#"
+                ><span>Dropdown</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul class="dd-box-shadow">
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown has-dropdown">
+                  <a href="#"
+                    ><span>Deep Dropdown</span>
+                    <i class="bi bi-chevron-down"></i
+                  ></a>
+                  <ul class="dd-box-shadow">
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li> -->
+            <!-- <li><a href="index.html#contact">Contact</a></li> -->
+          </ul>
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <!-- End Nav Menu -->
+
+        <a class="btn-getstarted" href="login.html">Masuk</a>
+      </div>
+    </header>
+    <!-- End Navbar -->
+
     <!-- Card disini -->
+    <i class="fa-solid fa-user"></i>
+    <section class="product1" style="margin-top: 70px;">
+        <div class="searchbox">
+          <input class="form-control" id="exampleDataList" placeholder="Cari barang yang anda butuhkan">
+          <!-- <i class="fas fa-search" style="position: absolute; z-index: 1; left: 940px;"></i> -->
+
+          <datalist id="datalistOptions">
+            <option value="Televisi">
+            <option value="Radio">
+            <option value="Kulkas">
+            <option value="Sepeda">
+            <option value="Komputer">
+          </datalist>
+        </div>
+        
+        <div class="pro-container">
+            <div class="pro">
+                <img src="assets/img/features-light-1.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Dijual -</span><h5>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/features-light-2.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5> <span>- Disewakan -</span> </h5>                 
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/features-light-3.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Gratis -</span></h5>                   
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Dijual -</span> </h5>                   
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <!-- Ganti lengkapi photo product -->
+            <div class="pro">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Disewakan -</span></h5>               
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Gratis -</span></h5>               
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Dijual -</span></h5>                  
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+
+            <div class="pro">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" alt="">
+                <div class="des">
+                    <h5>Barang Bekas</h5>
+                    <h5><span>- Disewakan -</span></h5>                   
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn-getstarted">Detail</button>
+                </div>
+                <!-- <a href="#"><i class="fal  fa-shopping-cart cart"></i></a> -->
+            </div>
+        </div>
+    </section>
   </body>
 </html>

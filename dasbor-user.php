@@ -23,8 +23,8 @@ include 'koneksi.php';
     </nav>
     <div class="d-flex flex-row justify-content-center align-items-center profil-container">
         <section class="profil">
-            <img src="uploads/Screenshot_1.png" alt="foto profil" class="foto-profil" />
             <?php
+            echo "<img src='assets/img/users/$foto' alt='foto profil' class='foto-profil' />";
             echo "<h2>$nama</h2>";
             echo "<h3>$kontak</h3>";
             ?>
@@ -75,7 +75,7 @@ include 'koneksi.php';
                             <h5><?php echo $namaBarang; ?></h5>
                             <h5><span>- <?php echo $status; ?> -</span></h5>
                         </div>
-                        <a class="btn-edit" href="#">Edit</a>
+                        <a class="btn-edit" href="edit-barang.php?item_id=<?php echo $item_id; ?>">Edit</a>
                         <a class="btn-delete" href="hapus-barang.php?item_id=<?php echo $item_id; ?>">Hapus</a>
                     </div>
             <?php

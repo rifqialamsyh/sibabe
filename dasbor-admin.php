@@ -22,8 +22,8 @@ $result = mysqli_query($koneksi, $query);
     </nav>
     <div class="d-flex flex-row justify-content-center align-items-center profil-container">
         <section class="profil">
-            <img src="uploads/Screenshot_1.png" alt="foto profil" class="foto-profil" />
             <?php
+            echo "<img src='assets/img/users/$foto' alt='foto profil' class='foto-profil' />";
             echo "<h2>$nama</h2>";
             echo "<h3>$kontak</h3>";
             ?>
@@ -78,6 +78,7 @@ $result = mysqli_query($koneksi, $query);
 <div class="container">
     <hr>
     <section>
+        <h2 style="text-align: center;">Semua Testimoni</h2>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>

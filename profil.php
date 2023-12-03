@@ -17,6 +17,7 @@ $nama = $row['nama'];
 $kontak = $row['nohp'];
 $id = $row['id'];
 $role = $row['role'];
+$foto = $row['foto'];
 
 // Fetch data from the barang table
 $query_barang = "SELECT * FROM barang WHERE user_id = $id";
