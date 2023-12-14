@@ -66,6 +66,23 @@ include 'koneksi.php';
       </section>
       <!-- End Hero Section -->
 
+      <!-- start of pentingnya section -->
+
+      <section id="importance" class="importance container">'
+        <div class="sharing">
+          <img src="assets/img/sharing.png" alt="foto sharing" data-aos="fade-up">
+          <div class="text" data-aos="fade-up">
+            <p>Dengan berpartisipasi, anda <span> membantu</span> masyarakat yang membutuhkan.</p>
+          </div>
+        </div>
+        <div class="green">
+          <img src="assets/img/hijau.png" alt="foto hijau" data-aos="fade-up">
+          <div class="text" data-aos="fade-up">
+            <p>Sumbangan barang bekas dapat digunakan untuk membantu <span> mengurangi jumlah limbah</span> yang masuk ke tempat pembuangan sampah</p>
+          </div>
+        </div>
+      </section>
+
       <!-- babe Section - Home Page -->
       <section id="portfolio" class="portfolio">
         <!--  Section Title -->

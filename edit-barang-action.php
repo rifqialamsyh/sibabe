@@ -2,7 +2,7 @@
 include "koneksi.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = $_POST["user_id"];
+    $id = $_POST['user_id'];
     $nama = $_POST["nama"];
     $deskripsi = $_POST["deskripsi"];
     $status = $_POST["status"];
@@ -12,10 +12,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $targetDir = "assets/img/babe/";
     $targetFilePath = $targetDir . basename($photo);
 
-    // Move the uploaded file to the specified directory
-    if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFilePath)) {
+    // Check if the photo has changed
+    if ($_FILES["photo"]["error"] !== UPLOAD_ERR_NO_FILE) {
+        // Move the uploaded file to the specified directory
+        if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFilePath)) {
+            $photoChanged = true;
+        } else {
+            echo "Error uploading file";
+            exit;
+        }
+    } else {
+        $photoChanged = false;
+    }
+
+    // Build the update query based on the changed parameters
+    $query = "UPDATE barang SET ";
+    $updates = [];
+    if ($nama !== "") {
+        $updates[] = "nama='$nama'";
+    }
+    if ($deskripsi !== "") {
+        $updates[] = "deskripsi='$deskripsi'";
+    }
+    if ($status !== "") {
+        $updates[] = "status='$status'";
+    }
+    if ($photoChanged) {
+        $updates[] = "foto='$photo'";
+    }
+
+    if (!empty($updates)) {
+        $query .= implode(", ", $updates);
+        $query .= " WHERE item_id='$id'";
+
         // Update data in barang table
-        $query = "UPDATE barang SET nama='$nama', status='$status', deskripsi='$deskripsi', foto='$photo' WHERE user_id='$user_id'";
         $result = mysqli_query($koneksi, $query);
 
         if ($result) {
@@ -24,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error updating data: " . mysqli_error($koneksi);
         }
     } else {
-        echo "Error uploading file";
+        echo "No parameters changed";
     }
 }

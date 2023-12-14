@@ -46,13 +46,13 @@ if ($result) {
             <form action="edit-barang-action.php" method="post" enctype="multipart/form-data">
                 <input type="number" name="user_id" value="<?php echo $id; ?>" style="display: none;" readonly>
                 <label for="nama">Nama Barang Bekas</label>
-                <input type="text" id="nama" name="nama" value="<?php echo $nama; ?>" required />
+                <input type="text" id="nama" name="nama" />
 
                 <label for=" deskripsi">Deskripsi</label>
-                <textarea id="deskripsi" name="deskripsi" value="<?php echo $deskripsi; ?>" required></textarea>
+                <textarea id="deskripsi" name="deskripsi"></textarea>
 
                 <label for=" status">Status</label>
-                <select id="status" name="status" required>
+                <select id="status" name="status">
                     <option value="Gratis">Gratis</option>
                     <option value="Dijual">Dijual</option>
                 </select>

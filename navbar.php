@@ -15,7 +15,7 @@ session_start();
         <!-- <li><a href="index.php#hero" class="active">Beranda</a></li> -->
         <li><a href="index.php#portfolio">Barang Bekas</a></li>
         <li><a href="index.php#testimonials">Testimoni</a></li>
-        <li><a href="index.php#about">Tentang Kami</a></li>
+        <li><a href="tentang-kami.php">Tentang Kami</a></li>
         <li>
           <hr>
         </li>

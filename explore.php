@@ -39,9 +39,31 @@ include 'koneksi.php';
 
   <!-- Card disini -->
   <section class="product1" style="margin-top: 70px;">
-    <div class="searchbox">
-      <input class="form-control" id="exampleDataList" placeholder="Cari barang yang anda butuhkan">
-    </div>
+    <!-- <div class="searchbox">
+      <form action="post">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Cari barang yang anda butuhkan">
+        <?php
+
+        if (isset($_POST['search'])) {
+          $searchValue = $_POST['search'];
+
+          // Fetch the matching barang from the database
+          $query = "SELECT * FROM barang WHERE nama LIKE '%$searchValue%'";
+          $result = mysqli_query($koneksi, $query);
+
+          if (mysqli_num_rows($result) > 0) {
+            foreach ($result as $row) {
+              // Display the search results
+              echo '<div class="search-result">' . $row['nama'] . '</div>';
+            }
+          } else {
+            // Display a message if no results found
+            echo '<div class="search-result">No results found</div>';
+          }
+        }
+        ?>
+      </form>
+    </div> -->
 
     <div class="pro-container">
       <?php
@@ -60,7 +82,7 @@ include 'koneksi.php';
                 <h5>
             </div>
             <div class="d-grid gap-2 col-6 m-auto">
-              <a href="" class="btn-getstarted">Detail</a>
+              <a href="detail-barang.php?item_id=<?php echo $row['item_id']; ?>" class="btn-getstarted">Detail</a>
             </div>
           </div>
       <?php
