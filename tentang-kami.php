@@ -40,7 +40,7 @@
                         <img src="assets/img/info.jpg" class="img-fluid" alt="" />
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-left">
-                        <h2 style="font-weight: 700;">SiBaBe: Tempat Barang Bekas Mendapatkan Kehidupan Kedua</h2>
+                        <h2 style="font-weight: 700;">SiBaBe: Tempat Barang Bekas Mendapatkan Kehidupan Kedua.</h2>
 
                         <p>
                             Kami bersemangat untuk memberikan kesempatan kedua kepada harta karun bekas.
