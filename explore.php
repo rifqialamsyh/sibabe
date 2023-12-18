@@ -17,7 +17,6 @@ include 'koneksi.php';
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -39,32 +38,6 @@ include 'koneksi.php';
 
   <!-- Card disini -->
   <section class="product1" style="margin-top: 70px;">
-    <!-- <div class="searchbox">
-      <form action="post">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Cari barang yang anda butuhkan">
-        <?php
-
-        if (isset($_POST['search'])) {
-          $searchValue = $_POST['search'];
-
-          // Fetch the matching barang from the database
-          $query = "SELECT * FROM barang WHERE nama LIKE '%$searchValue%'";
-          $result = mysqli_query($koneksi, $query);
-
-          if (mysqli_num_rows($result) > 0) {
-            foreach ($result as $row) {
-              // Display the search results
-              echo '<div class="search-result">' . $row['nama'] . '</div>';
-            }
-          } else {
-            // Display a message if no results found
-            echo '<div class="search-result">No results found</div>';
-          }
-        }
-        ?>
-      </form>
-    </div> -->
-
     <div class="pro-container">
       <?php
       // Fetch all barang from the database

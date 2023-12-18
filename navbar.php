@@ -12,6 +12,7 @@ session_start();
     <!-- Nav Menu -->
     <nav id="navmenu" class="navmenu">
       <ul>
+        <!-- Navme Menu For Mobile -->
         <!-- <li><a href="index.php#hero" class="active">Beranda</a></li> -->
         <li><a href="index.php#portfolio">Barang Bekas</a></li>
         <li><a href="index.php#testimonials">Testimoni</a></li>
@@ -22,8 +23,8 @@ session_start();
         <?php
         if (isset($_SESSION['email'])) {
         ?>
-          <li class="user-nav-mobile"><a href="index.php#about">Dasbor</a></li>
-          <li class="user-nav-mobile "><a href="index.php#about">Keluar</a></li>
+          <li class="user-nav-mobile"><a href="profil.php">Dasbor</a></li>
+          <li class="user-nav-mobile "><a href="logout.php">Keluar</a></li>
         <?php
         } ?>
 

@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit;
@@ -21,7 +20,7 @@ include 'koneksi.php';
             </div>
         </div>
     </nav>
-    <div class="d-flex flex-row justify-content-center align-items-center profil-container">
+    <div class="d-flex flex-row justify-content-center align-items-center profil-container ">
         <section class="profil">
             <?php
             echo "<img src='assets/img/users/$foto' alt='foto profil' class='foto-profil' />";

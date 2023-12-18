@@ -19,7 +19,6 @@ include 'koneksi.php';
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -93,18 +92,6 @@ include 'koneksi.php';
 
         <div class="container">
           <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-            <!-- <ul
-              class="portfolio-filters isotope-filters"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Card</li>
-              <li data-filter=".filter-branding">Web</li>
-            </ul> -->
-            <!-- End Portfolio Filters -->
-
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
               <?php
               // Fetch all barang from the database
@@ -118,7 +105,6 @@ include 'koneksi.php';
                     <img src="assets/img/babe/<?php echo $row['foto']; ?>" class="img-fluid" alt="" />
                     <div class="portfolio-info">
                       <h4><?php echo $row['nama']; ?></h4>
-                      <!-- <p><?php echo $row['description']; ?></p> -->
                       <a href="assets/img/babe/<?php echo $row['foto']; ?>" title="<?php echo $row['nama']; ?>" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                       <a href="detail-barang.php?item_id=<?php echo $row['item_id']; ?>" title="More Details" class="details-link"><i class="bi bi-arrow-right"></i></a>
                     </div>
@@ -192,10 +178,6 @@ include 'koneksi.php';
                     }
                   }
                   ?>
-
-                  <!-- End testimonial item -->
-
-
 
                   <!-- End testimonial item -->
                 </div>

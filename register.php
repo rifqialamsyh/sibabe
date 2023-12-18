@@ -24,7 +24,7 @@
       <input class="mb-3" type="email" name="email" placeholder="Email" required />
       <input class="mb-3" type="password" name="password" placeholder="Password" required />
       <br>
-      <label for="photo">Upload Photo</label>
+      <label for="photo">Unggah Foto Profil</label>
       <input type="file" id="photo" name="photo" accept="image/*" required class="up-button" />
       <input class="mb-3 submitbutton" type="submit" value="Daftar" />
     </form>

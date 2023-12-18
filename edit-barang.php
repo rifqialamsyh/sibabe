@@ -41,7 +41,7 @@ if ($result) {
 
 <body>
     <div class="d-flex flex-row justify-content-center align-items-center profil-container">
-        <h1>UNDER MAINTENANCE</h1>
+        <!-- <h1>UNDER MAINTENANCE</h1> -->
         <section class="addbabe">
             <form action="edit-barang-action.php" method="post" enctype="multipart/form-data">
                 <input type="number" name="user_id" value="<?php echo $id; ?>" style="display: none;" readonly>
